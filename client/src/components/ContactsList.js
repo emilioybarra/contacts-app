@@ -62,7 +62,7 @@ export default class ContactsList extends React.Component {
                         Number: {contact.phoneNumber}
                       </p>
                     </Content>
-                    <Level breakpoint='mobile'>
+                    <Level>
                       <Level.Side align='left'>
                         <Button color='danger' onClick={(e) => this.handleOnDelete(e, contact.id)}>Delete</Button>
                       </Level.Side>

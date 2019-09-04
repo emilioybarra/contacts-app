@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
 import 'normalize.css'
 import './main.css'
 import 'bulma/bulma.sass'

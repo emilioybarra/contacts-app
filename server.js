@@ -9,11 +9,6 @@ app.use(bodyParser.json(), express.static(path.join(__dirname, 'client/build')))
 
 let contacts = [
   {
-    firstName: 'Emilio',
-    lastName: 'Ybarra',
-    phoneNumber: '015737041618'
-  },
-  {
     firstName: 'John',
     lastName: 'Doe',
     phoneNumber: '0123456789'
@@ -26,6 +21,7 @@ let contacts = [
 ]
 
 app.get('/api/get-contacts', (request, result) => {
+  contacts.map((contact, index) => contact['id'] = index)
   result.json(contacts)
 })
 
@@ -36,6 +32,12 @@ app.post('/api/add-contact', (request, result) => {
     phoneNumber: request.body.phoneNumber
   }
   contacts.push(contact)
+  result.send(contacts)
+})
+
+app.post('/api/delete-contact', (request, result) => {
+  const contactId = request.body.contactId
+  contacts = contacts.filter(contact => contact.id !== contactId)
   result.send(contacts)
 })
 

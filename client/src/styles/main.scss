@@ -1,1 +1,21 @@
 @import '../../node_modules/bulma/bulma.sass';
+
+.input-error {
+  color: #E0003C;
+  font-size: 0.83333rem;
+  margin-top: 5px;
+}
+
+.input-error:before {
+  content: 'i';
+  background-color: #E0003C;
+  width: .8rem;
+  height: .8rem;
+  font-size: .8rem;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  border-radius: 100%;
+  line-height: 12px;
+  margin-right: 5px;
+}
